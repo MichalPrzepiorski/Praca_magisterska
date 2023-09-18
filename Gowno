@@ -1,0 +1,10 @@
+/file/set-tui-version "23.1"
+(cx-gui-do cx-activate-item "MenuBar*ExportSubMenu*Profile...")
+(cx-gui-do cx-set-list-selections "Write Profile*List4(Surfaces)" '( 0))
+(cx-gui-do cx-activate-item "Write Profile*List4(Surfaces)")
+(cx-gui-do cx-set-list-selections "Write Profile*List9(Values)" '( 40))
+(cx-gui-do cx-activate-item "Write Profile*List9(Values)")
+(cx-gui-do cx-activate-item "Write Profile*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "C:/Users/mprze/Desktop/Folder_pulpit/Rysunki/Praca_magisterska/Wynik") "Profile Files (*.csv *.prof )")
+(cx-gui-do cx-activate-item "Write Profile*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "MenuBar*WriteSubMenu*Stop Journal")
