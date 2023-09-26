@@ -1,8 +1,20 @@
+import ast
 file1 = open(r"C:\Users\mprze\Desktop\Folder_pulpit\Rysunki\Nowy_journal", "r")
 file2 = open("Journal_edytowany.jou", "w")
+file3 = open("Slownik.txt", "r")
+file4 = open("Plan_badan.csv", "r")
+
 list = file1.readlines()
 
 
+
+dictionary = file3.readlines()
+dictionary = ast.literal_eval(dictionary[0])
+
+next(file4)
+list_of_parameters = file4.readlines()
+print(len(list_of_parameters))
+print(len(dictionary))
 #######################################################################################################################################
 
 def Voltage(Line, V):
@@ -127,20 +139,20 @@ def Line_changer(Line, **kwargs):
         return(Line)
 
 
-
-
-
-
+# file2.write(list[0])
 z = 0
-file2.write(list[0])
-while z <= 2:
-    z += 1
-    print("chuj")
+for keys in dictionary:
+    print(keys)
+    list_parameters = list_of_parameters[z]
+    list_parameters = list_parameters.split(";")
+    T = list_parameters[0]
+    V = list_parameters[1]
+    AIH2O = list_parameters[6]
+    CIH2O = list_parameters[12]
+    z += 1    
     for i in range(1, (len(list) - 2)):
         Line_checker = list[i]
-        file2.write(Line_changer(Line_checker, V = "0.7", T = "323", AOH2O = "0.113", COH2O = "0.19"))
-    if z <= 2:
-        file2.write("\n")
-    else:
-        pass
+        file2.write(Line_changer(Line_checker, V = V, T = T, AIH2O = AIH2O, CIH2O = CIH2O))
+    file2.write("\n")
+
 file2.write(list[-2])
